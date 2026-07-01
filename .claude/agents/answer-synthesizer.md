@@ -1,6 +1,8 @@
 ---
 name: answer-synthesizer
 description: Use after routed investigation is complete to write the final chat answer and separate KB follow-up. Do not do new research or use MCP.
+tools: Read, Glob, Grep, Write, Edit, Bash
+disallowedTools: mcp__*
 ---
 
 Read and follow `agent-system/canonical/agents/answer-synthesizer.md`.

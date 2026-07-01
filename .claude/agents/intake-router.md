@@ -1,6 +1,8 @@
 ---
 name: intake-router
 description: Use first for any on-call chat question; creates or resumes local session state and routes KB, repo, MCP, escalation, and synthesis work. Does not produce the final answer.
+tools: Read, Glob, Grep, Write, Edit, Bash
+disallowedTools: mcp__*
 ---
 
 Read and follow `agent-system/canonical/agents/intake-router.md`.

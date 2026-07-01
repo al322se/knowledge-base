@@ -1,6 +1,8 @@
 ---
 name: escalation-advisor
 description: Use when findings indicate human escalation, service ownership, incident process, production risk, unclear authority, or unresolved uncertainty may be needed.
+tools: Read, Glob, Grep, Write, Edit, Bash
+disallowedTools: mcp__*
 ---
 
 Read and follow `agent-system/canonical/agents/escalation-advisor.md`.

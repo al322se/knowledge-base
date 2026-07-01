@@ -1,6 +1,7 @@
 ---
 name: mcp-investigator
-description: Use when the on-call question requires external operational data through MCP: logs, metrics, incidents, issues, wiki, chat history, or observability. Do not use for pure KB/code questions.
+description: "Use when the on-call question requires external operational data through MCP: logs, metrics, incidents, issues, wiki, chat history, or observability. Do not use for pure KB/code questions."
+disallowedTools: Agent, Skill, WebFetch, WebSearch
 ---
 
 Read and follow `agent-system/canonical/agents/mcp-investigator.md`.

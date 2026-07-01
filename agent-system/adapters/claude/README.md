@@ -15,9 +15,13 @@ Do not redefine agent behavior in `.claude/`. Update canonical files first, then
 
 ## Agent wrappers
 
-`.claude/agents/*` should point to the matching canonical agent file and relevant canonical skill. Claude Code subagent frontmatter is intentionally minimal.
+`.claude/agents/*` should point to the matching canonical agent file and relevant canonical skill.
 
-MCP permissions should be restricted by agent where the installed Claude Code version supports it. `mcp-investigator` and `bootstrapper` are the only agents expected to use MCP.
+MCP permissions are restricted by agent frontmatter:
+
+- Non-MCP agents use a `tools` allowlist for built-in local tools and `disallowedTools: mcp__*`.
+- `mcp-investigator` is the only committed wrapper that inherits configured MCP tools.
+- `bootstrapper` is local-only by default in the committed wrapper. For a dedicated company bootstrap that needs MCP discovery, add named read-only MCP servers in a local override.
 
 ## Skill wrappers
 
@@ -25,7 +29,7 @@ MCP permissions should be restricted by agent where the installed Claude Code ve
 
 ## MCP expectations
 
-- No MCP: `intake-router`, `kb-answerer`, `repo-investigator`, `escalation-advisor`, `answer-synthesizer`.
+- No MCP: `intake-router`, `kb-answerer`, `repo-investigator`, `escalation-advisor`, `answer-synthesizer`, `bootstrapper`.
 - MCP read-only expected: `mcp-investigator`.
-- MCP discovery/read-only allowed during setup: `bootstrapper`.
+- MCP discovery/read-only for bootstrap: enable only through a local, named-server override.
 - Write/action MCP calls require explicit human confirmation.

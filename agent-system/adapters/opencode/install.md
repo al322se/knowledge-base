@@ -1,15 +1,15 @@
 # OpenCode Install Notes
 
-This repository already contains `.opencode/agent/` and `.opencode/skills/` wrappers.
+This repository contains `.opencode/agent/`, `.opencode/agents/`, and `.opencode/skills/` wrappers. Current OpenCode docs use `.opencode/agents/`; `.opencode/agent/` is kept for compatibility with the original template structure.
 
 ## Setup
 
 1. Keep `agent-system/canonical/` committed.
-2. Keep `.opencode/agent/` and `.opencode/skills/` committed as thin wrappers.
-3. Configure OpenCode permissions so MCP/tool access is denied for agents that do not need it.
+2. Keep `.opencode/agents/`, `.opencode/agent/`, and `.opencode/skills/` committed as thin wrappers.
+3. Use the committed agent frontmatter to keep MCP denied for all agents except `mcp-investigator`.
 4. Allow only configured read-only MCP tools for `mcp-investigator`.
-5. Allow `bootstrapper` to perform MCP discovery/read-only inspection during setup.
+5. For company bootstrap MCP discovery, create a local override that enables the exact read-only MCP server patterns.
 
 ## Version-dependent TODO
 
-OpenCode permission syntax can vary by version and local configuration. Add exact permission fields here only after confirming the installed runtime supports them. Do not invent MCP tool names; use the names from the local OpenCode configuration.
+Do not invent MCP tool names; use the names from the local OpenCode configuration. If a local OpenCode version changes frontmatter syntax, keep the same policy: deny MCP everywhere except `mcp-investigator`, and expose bootstrap MCP only through a local named-server override.

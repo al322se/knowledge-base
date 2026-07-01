@@ -6,10 +6,10 @@ This repository already contains `.claude/agents/` and `.claude/skills/` wrapper
 
 1. Keep `agent-system/canonical/` committed.
 2. Keep `.claude/agents/` and `.claude/skills/` committed as thin wrappers.
-3. Configure Claude Code permissions so MCP is denied for agents that do not need it when your Claude Code version supports per-agent restrictions.
+3. Use the committed `.claude/agents/*` frontmatter to keep MCP denied for all agents except `mcp-investigator`.
 4. Allow only read-only MCP use for `mcp-investigator`.
-5. Allow `bootstrapper` to perform MCP discovery/read-only inspection during setup.
+5. For company bootstrap MCP discovery, create a local override that names the exact read-only MCP servers to expose.
 
 ## Version-dependent TODO
 
-Claude Code permission syntax can vary by version and local configuration. Add exact tool permission fields here only after confirming the installed runtime supports them.
+If a local Claude Code version changes frontmatter syntax, keep the same policy: deny `mcp__*` everywhere except `mcp-investigator`, and expose bootstrap MCP only through a local named-server override.
