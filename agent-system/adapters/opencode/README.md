@@ -21,7 +21,6 @@ OpenCode wrappers use agent frontmatter permissions:
 
 - Non-MCP agents use `tools: "*": false` plus an explicit built-in tool allowlist, which keeps MCP tools out of those agents.
 - `mcp-investigator` is the only committed wrapper that inherits configured MCP tools.
-- `bootstrapper` is local-only by default. For a dedicated company bootstrap that needs MCP discovery, enable named read-only MCP server patterns in a local override.
 
 ## Skill wrappers
 
@@ -29,7 +28,6 @@ OpenCode wrappers use agent frontmatter permissions:
 
 ## MCP expectations
 
-- No MCP: `intake-router`, `kb-answerer`, `repo-investigator`, `escalation-advisor`, `answer-synthesizer`, `bootstrapper`.
+- No MCP: `intake-router`, `kb-answerer`, `repo-investigator`, `escalation-advisor`, `answer-synthesizer`.
 - MCP read-only expected: `mcp-investigator`.
-- MCP discovery/read-only for bootstrap: enable only through a local, named-server override.
 - Write/action MCP calls require explicit human confirmation.

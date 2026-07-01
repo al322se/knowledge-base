@@ -21,7 +21,6 @@ MCP permissions are restricted by agent frontmatter:
 
 - Non-MCP agents use a `tools` allowlist for built-in local tools and `disallowedTools: mcp__*`.
 - `mcp-investigator` is the only committed wrapper that inherits configured MCP tools.
-- `bootstrapper` is local-only by default in the committed wrapper. For a dedicated company bootstrap that needs MCP discovery, add named read-only MCP servers in a local override.
 
 ## Skill wrappers
 
@@ -29,7 +28,6 @@ MCP permissions are restricted by agent frontmatter:
 
 ## MCP expectations
 
-- No MCP: `intake-router`, `kb-answerer`, `repo-investigator`, `escalation-advisor`, `answer-synthesizer`, `bootstrapper`.
+- No MCP: `intake-router`, `kb-answerer`, `repo-investigator`, `escalation-advisor`, `answer-synthesizer`.
 - MCP read-only expected: `mcp-investigator`.
-- MCP discovery/read-only for bootstrap: enable only through a local, named-server override.
 - Write/action MCP calls require explicit human confirmation.

@@ -8,5 +8,3 @@
 | `.claude/skills/mcp-investigation/SKILL.md` | `agent-system/canonical/skills/mcp-investigation/SKILL.md` |
 | `.claude/skills/answer-synthesis/SKILL.md` | `agent-system/canonical/skills/answer-synthesis/SKILL.md` |
 | `.claude/skills/escalation/SKILL.md` | `agent-system/canonical/skills/escalation/SKILL.md` |
-| `.claude/skills/company-bootstrap/SKILL.md` | `agent-system/canonical/skills/company-bootstrap/SKILL.md` |
-| `.claude/skills/mcp-inventory/SKILL.md` | `agent-system/canonical/skills/mcp-inventory/SKILL.md` |

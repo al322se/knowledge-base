@@ -22,14 +22,10 @@ Start with `intake-router`. It creates `.local/answer-sessions/<session>/`, writ
 
 ## State and resume
 
-Real session state lives under `.local/answer-sessions/` and `.local/bootstrap/`. These folders are local only and must not be committed.
+Real session state lives under `.local/answer-sessions/`. This folder is local only and must not be committed.
 
 If work stops, resume by reading the session `STATE.md`, then continue from the first incomplete step. Each agent writes only its own state file.
 
-## Bootstrap
-
-Use `bootstrapper` with `agent-system/canonical/pipelines/company-bootstrap.md` to discover company-specific input sources, MCP availability, on-call context, proposed overrides, and skill customizations. Human review is required before finalizing access policy or company-specific behavior.
-
 ## MCP policy
 
-By default, agents do not use MCP. The regular question-answering agent expected to use MCP is `mcp-investigator`, and it should use read-only access wherever possible. `bootstrapper` may perform MCP discovery/read-only inspection during setup. No agent should perform write or action calls through MCP without explicit human confirmation.
+By default, agents do not use MCP. The regular question-answering agent expected to use MCP is `mcp-investigator`, and it should use read-only access wherever possible. No agent should perform write or action calls through MCP without explicit human confirmation.
